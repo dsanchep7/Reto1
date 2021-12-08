@@ -1,6 +1,3 @@
-# RepositorioRetos
-Se crea repositorio para subir los retos del semillero.
-
 # Mi primer reto
 
 Mi primer reto consta de realizar la automatización de ingreso y busqueda de productos en la paginan https://co.ebay.com/
@@ -11,13 +8,14 @@ Las pruebas fueron apoyados por el IDE Intelling con el gestor de dependencias g
 
 
 ### Implementación de POM
-
+ 
 Se realiza en los paquetes 
 - drivers Clase - ChromeDriver )
 - pages (Clase - Pages)
 - steps (Clase - Steps)
 
-####La clase ChromeDriver
+####   La clase ChromeDriver
+  ```
 Esta clase se utiliza para levantar el navegador
 
 package drivers;
@@ -41,8 +39,9 @@ public class GoogleChromeDriver {
 
 }
 
-
-####La clase pages
+  ```
+####  La clase pages
+  ```
 Es donde definimos los xpath para la iteración con la pagina que estamos automatizando.
 
 package pages;
@@ -82,9 +81,10 @@ public class EbayPage {
         this.txtElementoBusqueda = By.xpath("//h3[contains(text(),'"+producto+"')]");
     }
 }
+  ```
 
-
-####La clase steps
+####  La clase steps
+  ```
 Es donde definimos el paso a paso de las acciones que vamos a realizar en el código a través de la creación de metodos para la correcta funcionalidad de la automatización
 
 package steps;
@@ -167,10 +167,10 @@ public class EbaySteps {
         }
     }
 
+  ```
 
 
-
-### Implementación del Cucumbe
+### Implementación del Cucumber
 
 Se realiza en los paquetes 
 
@@ -179,7 +179,8 @@ Se realiza en los paquetes
 -Directorio feature (Archivo.feature)
 
 
-####EL runner
+####  EL runner
+  ```
 Es el que nos permite ejecutar el proyecto.
 
 
@@ -200,10 +201,10 @@ import org.junit.runner.RunWith;
 public class EbayBuscadorRunner {
 
 }
+  ```
 
-
-
-####StepsDefinition
+#### StepsDefinition
+  ```
 Aqui se definen los paso a paso que se van hacer en la pagina cuando se ejecute la automatización que se componen por  el given, when y then.
 
 
@@ -242,9 +243,10 @@ public class EbayBuscadorStepDefinitions {
 
 }
 
+  ```
 
-
-####Los feature
+#### Los feature
+  ```
 Es donde se arma la historia de usuario, la cual tiene una estructura inicial y final.
 
 Feature: HU-001 Buscador Ebay
@@ -256,3 +258,4 @@ Feature: HU-001 Buscador Ebay
     Given que me encuentro en la pagina de Ebay
     When busque el producto
     Then podre ver en pantalla
+ ```
